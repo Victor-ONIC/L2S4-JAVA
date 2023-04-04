@@ -1,12 +1,11 @@
 package mixedlist;
 
 public class MixedMaillon {
-	Object data;
+	Affichable data;
 	MixedMaillon next;
 	
-	public MixedMaillon(Object o) {
+	public MixedMaillon(Affichable o) {
 		data = o;
 		next = null;
 	}
 }
-

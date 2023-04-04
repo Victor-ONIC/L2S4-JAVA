@@ -1,6 +1,8 @@
 package listedepoints;
 
-public class Point {
+import mixedlist.Affichable;
+
+public class Point implements Affichable {
 	double x, y;
 	
 	public Point() {}
@@ -11,6 +13,7 @@ public class Point {
 	}
 	
 	public void afficher() {
+		System.out.println(this.getClass().getSimpleName());
 		System.out.println("(" + x + "," + y + ")");
 	}
 }

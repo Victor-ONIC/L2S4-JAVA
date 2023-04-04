@@ -1,6 +1,8 @@
 package vector;
 
-class Vector {
+import mixedlist.Affichable;
+
+public class Vector implements Affichable {
     static int vectorCount;
     int x, y, z;
 
@@ -62,5 +64,10 @@ class Vector {
     	v2.x = tmp.x;
     	v2.y = tmp.y;
     	v2.z = tmp.z;
+    }
+    
+    public void afficher() {
+    	System.out.println(this.getClass().getSimpleName());
+    	System.out.println("(" + x + "," + y + "," + z + ")");
     }
 }

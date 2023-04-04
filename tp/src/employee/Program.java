@@ -14,5 +14,17 @@ public class Program {
 		Employee[] T = {e1, e2, e3, s1, s2, d};
 		
 		Paie.display(T);
+		
+		
+		// Tests de la classe Company.
+		try {
+			Company apple = new Company("Apple");
+			apple.ajouter(e1);
+			apple.ajouter(d);
+			
+			apple.afficher();
+		} catch (EmployeeException e) {
+			System.out.println(e.getMessage());
+		}
 	}
 }

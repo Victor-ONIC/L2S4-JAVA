@@ -1,15 +1,12 @@
 package mixedlist;
 
-import java.util.Vector;
-import listedepoints.Point;
-
 public class MixedList {
 	MixedMaillon head;
 	MixedMaillon current;
 	
 	public MixedList() {}
 	
-	public void ajout(Object o) {
+	public void ajout(Affichable o) {
 		MixedMaillon m = new MixedMaillon(o);
 		m.next = head;
 		head = m;
@@ -34,18 +31,7 @@ public class MixedList {
 	public void afficher() {
 		MixedMaillon m = head;
 		while (m != null) {
-			String t = m.data.getClass().getName();
-			System.out.println(t);
-			
-			if (t == "java.util.Vector") {
-				Vector<Point> v = (Vector<Point>)m.data;
-				for (int i = 0; i < v.size(); i++) {
-					v.get(i).afficher();
-				}
-			} else if (t == "listedepoints.Point") {
-				Point p = (Point)m.data;
-				p.afficher();
-			}
+			m.data.afficher();
 			m = m.next;
 		}
 	}
