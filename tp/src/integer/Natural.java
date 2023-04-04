@@ -15,30 +15,30 @@ public class Natural {
 		return value;
 	}
 	
-	public static int sum(Natural a, Natural b) throws SumErr {
+	public static Natural sum(Natural a, Natural b) throws SumErr, ConstErr {
 		// Check overflow.
 		if (Integer.MAX_VALUE - a.value < b.value) {
 			throw new SumErr("sum: Overflow !");
 		}
-		
-		return a.value + b.value;
+		Natural n = new Natural(a.value + b.value);
+		return n;
 	}
 	
-	public static int diff(Natural a, Natural b) throws DiffErr {
+	public static Natural diff(Natural a, Natural b) throws DiffErr, ConstErr {
 		// Check si résultat négatif.
 		if (a.value - b.value < 0) {
 			throw new DiffErr("diff: Résultat négatif !");
 		}
-		
-		return a.value - b.value;
+		Natural n = new Natural(a.value - b.value);
+		return n;
 	}
 	
-	public static int prod(Natural a, Natural b) throws ProdErr {
+	public static Natural prod(Natural a, Natural b) throws ProdErr, ConstErr {
 		// Check si overflow.
 		if (Integer.MAX_VALUE / a.value < b.value) {
 			throw new ProdErr("prod: Overflow !");
 		}
-		
-		return a.value * b.value;
+		Natural n = new Natural(a.value * b.value);
+		return n;
 	}
 }

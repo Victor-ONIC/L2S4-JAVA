@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 /*
  * La classe Company représente une entreprise, par exemple Apple.
+ * Il peut y avoir plusieurs entreprises. (Google, Apple, Facebook, ...).
  * 
  * Chaque entreprise a un vecteur d'employés.
  * On peut ajouter ou retirer des employés de l'entreprise.
@@ -69,51 +70,3 @@ class Company {
 		}
 	}
 }
-
-
-
-
-
-//import java.util.HashMap;
-//
-//public class Company {
-//	HashMap<String, Employee> E;
-//	
-//	public Company() {
-//		this.E = new HashMap<String, Employee>();
-//	}
-//	
-//	// Exceptions:
-//	// 1 employé 1 entreprise.
-//	// 1 directeur.
-//	public void ajouter(Employee e, String company) {
-//		if (!E.containsValue(e)) {
-//			if (e.getClass().getSimpleName() == "Director") {
-//				for (Employee emp : E.values()) {
-//					if (emp.getClass().getSimpleName() == "Director") {
-//						// Exception: il y a déjà un directeur.
-//					}
-//				}
-//				E.put(company, e);
-//			} else {
-//				E.put(company, e);
-//			}
-//		} else {
-//			// Exception: cet employé à déjà une autre entreprise.
-//		}
-//	}
-//	
-//	// Exceptions:
-//	// Impossible d'enlever un employé qui ne travaille pas pour cette entreprise.
-//	public void retirer(Employee e, String company) {
-//		if (E.get(company) == e) {
-//			E.remove(company);
-//		} else {
-//			// Exception: cet employé ne travaille pas dans cette entreprise.
-//		}
-//	}
-//	
-//	public void afficher() {
-//		E.entrySet().forEach(entry -> System.out.println(entry.getKey() + ": " + entry.getValue().name));
-//	}
-//}

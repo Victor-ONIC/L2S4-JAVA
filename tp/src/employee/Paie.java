@@ -7,5 +7,6 @@ public class Paie {
 			System.out.print(T[i].name + ": ");
 			System.out.println(T[i].getSalary());
 		}
+		System.out.println();
 	}
 }
