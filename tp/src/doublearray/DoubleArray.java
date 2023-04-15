@@ -43,10 +43,19 @@ public class DoubleArray {
     }
 
     public static double[][] sum(double[][] t1, double[][] t2) {
-        if (t1 == null || t2 == null || (t1.length != t2.length) || !regular(t1) || !regular(t2)) {
+        if (t1 == null || t2 == null) {
             return null;
         }
-        
+        if (!regular(t1) || !regular(t2)) {
+        	return null;
+        }
+        if (t1.length != t2.length) {
+        	return null;
+        }
+        if (t1[0].length != t2[0].length) {
+        	return null;
+        }
+
         int length = t1.length;
         int lineLength = t1[0].length;
         double[][] sum = new double[length][lineLength];

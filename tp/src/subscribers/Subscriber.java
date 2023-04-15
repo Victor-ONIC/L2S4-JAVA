@@ -8,4 +8,8 @@ public class Subscriber {
 		this.name = name;
 		this.number = number;
 	}
+	
+	// NB: de préférence, mettre des gettes/setters plutôt
+	// que d'accéder directement aux attributs.
+	// Même si c'est dans le même package !
 }

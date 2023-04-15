@@ -12,7 +12,7 @@ public class Index {
 	}
 	
 	public boolean addSubscriber(Subscriber sub) {
-		if (index == maxSubs) return false;
+		if (index >= maxSubs) return false;
 		subs[index++] = sub;
 		return true;
 	}
